@@ -5,6 +5,7 @@ import os
 
 VALID_EXTENSIONS = [".PNG", ".NEF", ".JPG", ".JPEG"]
 
+
 def gather_changes(file_prefix: str) -> list[(str,str)]:
     """ Creates a list of matching files that are set to be changed, returning an array of old and new filenames.
 
@@ -54,16 +55,12 @@ def display_changes(file_changes: list[(str,str)]) -> None:
 
 
 def main():
-
-
     print("\n\n\nTHIS SCRIPT IS AUTHORIZED BY SAM KHODAK. DO NOT RUN ANY OTHER UNKNOWN SCRIPTS ON YOUR PC.")
     print("\nBEFORE RENAMING, MAKE A BACKUP COPY OF THIS FOLDER WITH IMAGES. THEN DELETE IF EVERYTHING LOOKS FINE.\n\n\n")
-
     time.sleep(3)
 
     print("\nThis script will take the jpg/png images and NEF files in your current directory and rename them with a certain prefix, keeping the number suffix.")
     file_prefix = input("\n\nWhat would you like the prefix to be? Enter it now, then press enter:  ")
-
 
     file_changes = gather_changes(file_prefix)
     display_changes(file_changes)
